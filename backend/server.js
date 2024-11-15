@@ -1,6 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 import mysql from 'mysql2';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 const port = 3001;
@@ -8,12 +11,12 @@ const port = 3001;
 app.use(cors());
 app.use(express.json());
 
-// Database connection setup
+// Database connection setup using environment variables
 const db = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '8565Kelmendi8565',
-  database: 'url_shortener',
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME, 
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
@@ -53,7 +56,7 @@ app.post('/shorten', (req, res) => {
     res.json({
       original_url,
       shortened_url: `http://localhost:3001/${short_code}`,
-      short_code 
+      short_code
     });
   });
 });
