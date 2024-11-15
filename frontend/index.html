@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="AnchorzUp Logo_No Tagline (1).svg" alt="Logo" class="sidebar-logo">
+            </div>
+            <h2>My shortened URLs</h2>
+            <ul id="url-list">
+                <!-- List of shortened URLs will be injected here -->
+            </ul>
+        </aside>
+        <main class="main-content">
+            <h1>URL Shortener</h1>
+            <div class="input-group">
+                <input type="text" id="url-input" placeholder="Paste the URL to be shortened" />
+                <select id="expiration-select">
+                    <option value="">Add expiration date</option>
+                    <option value="1">1 minute</option>
+                    <option value="5">5 minutes</option>
+                    <option value="30">30 minutes</option>
+                    <option value="60">1 hour</option>
+                    <option value="300">5 hours</option>
+                </select>
+            </div>
+            <button id="shorten-btn">Shorten URL</button>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
