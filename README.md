@@ -41,7 +41,7 @@ CREATE TABLE urls (
  if necessary in `db.js` and `server.js` files.
 
 6. **Start the server:**
-   node server.js
+   `node server.js`
 
 The backend server will be running at `http://localhost:3001`.
  
